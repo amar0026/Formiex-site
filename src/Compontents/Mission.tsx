@@ -12,7 +12,6 @@ const MISSION_PARAGRAPHS = [
 ]
 const CTA_TITLE = 'Ready to try Fresio Herbals?'
 const CTA_SUB = 'Explore our range of herbal essentials.'
-const CTA_LINK = '#shop' // button nahi chahiye to neeche wala <a> delete kar dein
 
 // Section screen par aate hi animation chalane ke liye chhota hook
 function useInView<T extends HTMLElement>(threshold = 0.2) {
@@ -62,20 +61,14 @@ function Mission() {
           from { transform: scaleX(0); }
           to   { transform: scaleX(1); }
         }
-        @keyframes ms-shimmer {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          50%      { transform: translate(20px, -14px) scale(1.08); }
-        }
         .ms-fade-up { animation: ms-fade-up 0.8s ease-out both; }
         .ms-zoom-in { animation: ms-zoom-in 0.9s ease-out both; }
         .ms-line    { animation: ms-line 0.8s ease-out both; transform-origin: center; }
-        .ms-shimmer { animation: ms-shimmer 10s ease-in-out infinite; }
         .ms-roboto  { font-family: 'Roboto', sans-serif; }
         .ms-serif   { font-family: Georgia, 'Times New Roman', serif; }
 
         @media (prefers-reduced-motion: reduce) {
           .ms-fade-up, .ms-zoom-in, .ms-line { animation: none; opacity: 1; }
-          .ms-shimmer { animation: none; }
         }
       `}</style>
 
@@ -137,12 +130,8 @@ function Mission() {
         <section
           ref={ctaRef}
           id="cta"
-          className="relative isolate overflow-hidden mb-10 bg-[#9ea2a2] px-4 py-14 text-center sm:px-8 sm:py-20 lg:py-24"
+          className="relative isolate mb-10 overflow-hidden bg-[#9ea2a2] px-4 py-14 text-center sm:px-8 sm:py-20 lg:py-24"
         >
-          {/* Peeche halke floating circles */}
-         
-        
-
           <div className="mx-auto max-w-[760px]">
             <h2
               className={`ms-serif text-3xl text-white sm:text-4xl lg:text-[44px] ${show(ctaVisible, 'ms-fade-up')}`}
